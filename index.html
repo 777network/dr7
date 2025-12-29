@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heminredning – Din butik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Heminredning</h1>
+        <nav>
+            <button id="cartBtn">🛒 Kundvagn (<span id="cartCount">0</span>)</button>
+        </nav>
+    </header>
+
+    <main id="productList">
+        <!-- Produkter laddas här via app.js -->
+    </main>
+
+    <div id="cartModal" class="hidden">
+        <div class="cart-content">
+            <h2>Din kundvagn</h2>
+            <ul id="cartItems"></ul>
+            <button id="checkoutBtn">Gå till betalning</button>
+            <button id="closeCart">Stäng</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
 
