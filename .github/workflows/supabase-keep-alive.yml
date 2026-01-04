@@ -1,0 +1,17 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    # Körs kl 00:00 på måndagar och torsdagar
+    - cron: '0 0 * * 1,4'
+  workflow_dispatch: # Gör att du kan testa manuellt när du vill
+
+jobs:
+  ping_supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Ping Request
+        run: |
+          curl -i -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/products?select=id&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
